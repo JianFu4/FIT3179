@@ -1,5 +1,5 @@
-var vg_1 = "daily_cost_bar_chart.vg.json";
-vegaEmbed("#bar_chart", vg_1).then(function(result) {
+var vg_1 = "choropleth_map.vg.json";
+vegaEmbed("#map_chart", vg_1).then(function(result) {
 
 }).catch(console.error);
 

@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Renewable Energy Share in Total Final Energy Consumption (2020)",
+    "title": "Access to electricity (% of population) (2020)",
     "width": 800,
     "height": 400,
     "projection": {"type":"equalEarth"},
@@ -9,38 +9,32 @@
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
     },
     "transform": [
-      {
-        "lookup": "properties.NAME",
-        "from": {
-          "data": {
-            "url": "global-data-on-sustainable-energy (1).csv" ,
-            "format":{
-                "type": "csv",
-                "parse":{
-                    "Renewable energy share in total final energy consumption (%)": "number"
-                }
-            }
-          },
-          "key": "Entity",
-          "fields": ["Renewable energy share in total final energy consumption (%)"]
-        }
+  {
+    "lookup": "properties.NAME",
+    "from": {
+      "data": {
+        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
       },
-      {"filter":"datum.Year == 2020"},
-      {"calculate": "datum['Renewable energy share in total final energy consumption (%)'] + 0.1", "as": "Renewable Energy Share"}
-    ],
+      "key": "Entity",
+      "fields": ["Access to electricity (% of population)", "Year"]
+    }
+  },
+  {"filter" : "datum.Year == 2020"},
+  {"calculate": "datum['Access to electricity (% of population)'] + 0.1", "as": "Access to electricity"}
+],
+
     "mark": {"type": "geoshape"},
     "encoding": {
       "color": {
-        "field": "Renewable energy share in total final energy consumption (%)",
+        "field": "Access to electricity (% of population)",
         "type": "quantitative",
         "scale": {"type": "log"}
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Renewable energy share in total final energy consumption (%)", "type": "quantitative", "title": "Renewable Energy Share"}
+        {"field": "Access to electricity (% of population)", "type": "quantitative", "title": "Access to electricity (% of population)"}
       ]
     }
-  }
-
+}
 
     
