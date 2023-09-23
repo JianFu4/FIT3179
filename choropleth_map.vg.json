@@ -1,40 +1,57 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Access to electricity (% of population) (2020)",
+    "title": "Primary energy consumption per capita(kWh/person) (2020)",
     "width": 800,
     "height": 400,
     "projection": {"type":"equalEarth"},
-    "data": {
+    "layer":[
+      {
+        "data": {
       "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
     },
-    "transform": [
-  {
-    "lookup": "properties.NAME",
-    "from": {
-      "data": {
-        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+    "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
       },
-      "key": "Entity",
-      "fields": ["Access to electricity (% of population)", "Year"]
-    }
-  },
-  {"filter" : "datum.Year == 2020"},
-  {"calculate": "datum['Access to electricity (% of population)'] + 0.1", "as": "Access to electricity"}
-],
-
-    "mark": {"type": "geoshape"},
-    "encoding": {
-      "color": {
-        "field": "Access to electricity (% of population)",
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+          "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+      },
+      {
+        "data" : {
+          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv" 
+        },
+        "transform": [{"filter" : "datum.Year == 2020"}],
+        "mark" : {"type":"circle","tooltip": {"content": "data"}},
+        "encoding": {
+          "longitude": {"field":"Longitude","type": "quantitative"},
+          "latitude": {"field":"Latitude","type": "quantitative"},
+          "size" : {"field":"Primary energy consumption per capita (kWh/person)",
+          "type": "quantitative",
+          "title": "Primary energy consumption per capita (kWh/person)",
+          "scale" : {}
+          },
+          "tooltip":[
+             {
+        "field": "Entity",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "Primary energy consumption per capita (kWh/person)",
         "type": "quantitative",
-        "scale": {"type": "log"}
+        "title": "Energy Consumption (kWh/person)"
       },
-      "tooltip": [
-        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "Access to electricity (% of population)", "type": "quantitative", "title": "Access to electricity (% of population)"}
-      ]
-    }
-}
+      {
+        "field": "Land Area(Km2)",
+        "type": "quantitative",
+        "title": "Land Area(Km2)"
+      }
+          ]
+        }
 
-    
+      }
+    ]
+}
