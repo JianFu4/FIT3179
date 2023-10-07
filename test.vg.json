@@ -50,7 +50,13 @@
             "x": {
               "field": "Access to electricity (% of population)", 
               "type": "quantitative"
-            }
+            },
+            "tooltip": [
+    {"field": "Entity", "type": "nominal", "title": "Country"},
+    {"field": "Access to electricity (% of population)", "type": "quantitative", "title": "Access to Electricity (%)"},
+    {"field": "Year", "type": "quantitative", "title": "Year"}
+]
+
           }
       },
       {
