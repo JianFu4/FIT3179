@@ -1,0 +1,57 @@
+
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+  },
+  "title": "GDP per Capita vs Energy Intensity",
+  
+  "width": 600,
+  "height": 400,
+  "selection": {
+    "yearSlider": {
+      "type": "single",
+      "fields": ["Year"],
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2019,
+        "step": 1,
+        "name" : "Year"
+      },
+      "init": {"Year": 2019}
+    }
+  },
+  "transform": [{"filter": "datum.Year == yearSlider.Year"}],
+  "mark": {
+    "type": "circle",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "gdp_per_capita",
+      "type": "quantitative",
+      "title": "GDP per Capita",
+      "scale" : {"domain": [0,120000]}
+    },
+    "y": {
+      "field": "Energy intensity level of primary energy (MJ/$2017 PPP GDP)",
+      "type": "quantitative",
+      "title": "Energy Intensity ",
+      "scale" : {"domain":[0,30]}
+    },
+    "color": {
+      "field": "Entity",
+      "type": "nominal",
+      "legend": null  
+    },
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Country"},
+      {"field": "gdp_per_capita", "type": "quantitative"},
+      {"field": "Energy intensity level of primary energy (MJ/$2017 PPP GDP)", "type": "quantitative"}
+    ]
+  
+}
+
+}

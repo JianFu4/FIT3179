@@ -23,15 +23,35 @@
         "data" : {
           "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv" 
         },
-        "transform": [{"filter" : "datum.Year == 2020"}],
-        "mark" : {"type":"circle","tooltip": {"content": "data"}},
+        "selection": {
+          "yearSlider": {
+              "type": "single",
+              "fields": ["Year"],
+              "bind": {
+                  "input": "range",
+                  "min": 2000,
+                  "max": 2020,
+                  "step": 1,
+                  "name": "Year"
+              },
+              "init": {"Year": 2020}
+          }
+      },
+        "transform": [{"filter" : "datum.Year == yearSlider.Year"}],
+        "mark" : {"type":"circle",
+        "opacity": 0.7,
+        "color" : "#FFA500",
+        "stroke" : "#000000",
+        "strokeWidth" : 0.2,
+        "strokeOpacity" : 1 , 
+        "tooltip": {"content": "data"}},
         "encoding": {
           "longitude": {"field":"Longitude","type": "quantitative"},
           "latitude": {"field":"Latitude","type": "quantitative"},
           "size" : {"field":"Primary energy consumption per capita (kWh/person)",
           "type": "quantitative",
           "title": "Primary energy consumption per capita (kWh/person)",
-          "scale" : {}
+          "scale" : {"domain":[0, 263000]}
           },
           "tooltip":[
              {

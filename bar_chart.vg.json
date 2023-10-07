@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Top 10 countries with highest access to electricity",
+    "width": 800,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+    },
+    "selection": {
+      "yearSelector": {
+        "type": "single",
+        "fields": ["Year"],
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2020,
+          "step": 1,
+          "name": "Year"
+        },
+        "init": {"Year": 2020}
+      }
+    },
+    "transform": [
+      {"filter": "datum.Year == yearSelector.Year"},
+      {"sort": [{"field": "Access to electricity (% of population)", "order": "descending"}]},
+      {"window": [{"op": "rank", "as": "rank"}]},
+      {"filter": "datum.rank <= 10"}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Entity", 
+        "type": "nominal", 
+        "sort": {"field": "Access to electricity (% of population)", "order": "descending"}
+      },
+      "x": {
+        "field": "Access to electricity (% of population)", 
+        "type": "quantitative"
+      }
+    }
+  }
+  

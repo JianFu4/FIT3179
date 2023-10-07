@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+    "height": 300,
+    "padding": 5,
+    "autosize": {"type": "fit", "resize": true, "contains": "padding"},
+    "data": {
+        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+      },
+    "transform": [
+        {"filter": "datum.Year == yearSelector.Year"},
+        {"sort": [{"field": "Access to electricity (% of population)", "order": "ascending"}]},
+        {"window": [{"op": "rank", "as": "rank"}]},
+        {"filter": "datum.rank <= 10"}
+      ],
+      "encoding": {
+        "y": {
+          "field": "Entity", 
+          "type": "nominal", 
+          "sort": {"field": "Access to electricity (% of population)", "order": "ascending"}
+        },
+        "x": {
+          "field": "Access to electricity (% of population)", 
+          "type": "quantitative"
+        }
+      },
+    "layer": [
+      {
+        "selection": {
+            "yearSelector": {
+              "type": "single",
+              "fields": ["Year"],
+              "bind": {
+                "input": "range",
+                "min": 2000,
+                "max": 2020,
+                "step": 1,
+                "name": "Year"
+              },
+              "init": {"Year": 2020}
+            }
+          },
+        "mark": {"type": "bar", "point": true, "color": "#FFC94E", "height": 15},
+        "encoding": {
+            "y": {
+              "field": "Entity", 
+              "type": "nominal", 
+              "sort": {"field": "Access to electricity (% of population)", "order": "descending"}
+            },
+            "x": {
+              "field": "Access to electricity (% of population)", 
+              "type": "quantitative"
+            }
+          }
+      },
+      {
+        "mark": {"type": "text", "align": "left", "baseline": "middle"},
+        "encoding": {
+          "text": {
+            "field": "Access to electricity (% of population)",
+            "type": "quantitative"
+          },
+          "tooltip": {
+            "field": "Access to electricity (% of population)",
+            "type": "quantitative"
+          }
+        }
+      }
+    ]
+  }
