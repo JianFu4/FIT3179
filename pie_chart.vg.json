@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+    },
+    "transform": [{
+      "aggregate": [
+        {"op": "sum", "field": "Electricity from fossil fuels (TWh)", "as": "Fossil Fuels"},
+        {"op": "sum", "field": "Electricity from nuclear (TWh)", "as": "Nuclear"},
+        {"op": "sum", "field": "Electricity from renewables (TWh)", "as": "Renewables"}
+      ],
+      "groupby": []
+    },
+    {
+      "fold": ["Fossil Fuels", "Nuclear", "Renewables"],
+      "as": ["Source", "Value"]
+    }],
+    "mark": {"type": "arc", "innerRadius": 50},
+    "encoding": {
+      "theta": {"field": "Value", "type": "quantitative"},
+      "color": {"field": "Source", "type": "nominal"}
+    }
+  }
+  

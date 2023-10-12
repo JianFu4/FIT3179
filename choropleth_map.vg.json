@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Primary energy consumption per capita(kWh/person) (2020)",
+    "title": "Primary energy consumption per capita(kWh/person) (2000-2020)",
     "width": 800,
     "height": 400,
     "projection": {"type":"equalEarth"},
@@ -18,6 +18,13 @@
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
         },
         "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+      },
+      {
+        "data" : {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+          "format":{"type": "topojson","feature": "oceans"}
+        },
+        "mark":{"type": "geoshape","fill":"skyblue"}
       },
       {
         "data" : {
