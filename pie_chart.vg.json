@@ -1,24 +1,49 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+      "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_dataset.csv"
     },
-    "transform": [{
-      "aggregate": [
-        {"op": "sum", "field": "Electricity from fossil fuels (TWh)", "as": "Fossil Fuels"},
-        {"op": "sum", "field": "Electricity from nuclear (TWh)", "as": "Nuclear"},
-        {"op": "sum", "field": "Electricity from renewables (TWh)", "as": "Renewables"}
-      ],
-      "groupby": []
+    "selection": {
+      "yearSlider": {
+        "type": "single",
+        "fields": ["Year"],
+        "bind": {"input": "range", "min": 2000, "max": 2020, "step": 1}
+      }
     },
-    {
-      "fold": ["Fossil Fuels", "Nuclear", "Renewables"],
-      "as": ["Source", "Value"]
-    }],
-    "mark": {"type": "arc", "innerRadius": 50},
+    "transform": [
+      {
+        "filter": {"selection": "yearSlider"}
+      },
+      {
+        "aggregate": [
+          {"op": "sum", "field": "Electricity from fossil fuels (TWh)", "as": "Fossil Fuels"},
+          {"op": "sum", "field": "Electricity from nuclear (TWh)", "as": "Nuclear"},
+          {"op": "sum", "field": "Electricity from renewables (TWh)", "as": "Renewables"}
+        ],
+        "groupby": []
+      },
+      {
+        "fold": ["Fossil Fuels", "Nuclear", "Renewables"],
+        "as": ["Source", "Value"]
+      }
+    ],
     "encoding": {
       "theta": {"field": "Value", "type": "quantitative"},
-      "color": {"field": "Source", "type": "nominal"}
-    }
+      "color": {"field": "Source", "type": "nominal"},
+      "text": {"field": "Source", "type": "nominal"},
+      "tooltip": [
+        {"field": "Value", "title": "Percentage"},
+        {"field": "Source", "title": "Source"}
+      ]
+    },
+    "layer": [
+      {
+        "mark": {"type": "arc", "outerRadius": 50}
+      },
+      {
+        "mark": {"type": "text", "radius": 90}
+      }
+    ]
   }
+  
   

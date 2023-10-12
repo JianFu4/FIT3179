@@ -5,7 +5,7 @@
     "padding": 5,
     "autosize": {"type": "fit", "resize": true, "contains": "padding"},
     "data": {
-        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/global-data-on-sustainable-energy%20(1).csv"
+        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_dataset.csv"
       },
     "transform": [
         {"filter": "datum.Year == yearSelector.Year"},

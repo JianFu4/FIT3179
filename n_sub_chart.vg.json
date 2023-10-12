@@ -6,16 +6,14 @@
     "transform": [
       {
         "aggregate": [
-          {"op": "sum", "field": "Electricity from fossil fuels (TWh)", "as": "Fossil Fuels"}
+          {"op": "sum", "field": "Electricity from nuclear (TWh)", "as": "Nuclear"}
         ],
         "groupby": ["region"]
       }
     ],
     "mark": {"type": "arc", "innerRadius": 50},
     "encoding": {
-      "theta": {"field": "Fossil Fuels", "type": "quantitative"},
+      "theta": {"field": "Nuclear", "type": "quantitative"},
       "color": {"field": "region", "type": "nominal"}
     }
   }
-  
-  
