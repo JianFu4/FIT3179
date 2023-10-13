@@ -1,50 +1,52 @@
-
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "repeat": {
-      "row": ["gdp_per_capita", "Value_co2_emissions_kt_by_country", "Access to electricity (% of population)","Energy intensity level of primary energy (MJ/$2017 PPP GDP)","Renewable energy share in the total final energy consumption (%)"],
-      "column": ["Renewable energy share in the total final energy consumption (%)", "Energy intensity level of primary energy (MJ/$2017 PPP GDP)", "Access to electricity (% of population)","Value_co2_emissions_kt_by_country","gdp_per_capita"]
-    },
-    "spec": {
-      "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_dataset.csv"},
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv"},
+  "hconcat": [
+    {
       "mark": "point",
-      "params": [
-        {
-          "name": "brush",
-          "select": {
-            "type": "interval",
-            "resolve": "union",
-            "on": "[pointerdown[event.shiftKey], window:pointerup] > window:pointermove!",
-            "translate": "[pointerdown[event.shiftKey], window:pointerup] > window:pointermove!",
-            "zoom": "wheel![event.shiftKey]"
-          }
-        },
-        {
-          "name": "grid",
-          "select": {
-            "type": "interval",
-            "resolve": "global",
-            "translate": "[pointerdown[!event.shiftKey], window:pointerup] > window:pointermove!",
-            "zoom": "wheel![!event.shiftKey]"
-          },
-          "bind": "scales"
+      
+      
+      "selection": {
+        "clicked": {
+          "type": "single",
+          "nearest": true,
+          "on": "click",
+          "encodings": ["x", "y"],
+          "empty": "none",
+          "fields": ["Entity"]
         }
-      ],
+      },
+      
+
+
+
+
+
       "encoding": {
-        "x": {"field": {"repeat": "column"}, "type": "quantitative"},
-        "y": {
-          "field": {"repeat": "row"},
-          "type": "quantitative",
-          "axis": {"minExtent": 30}
-        },
-        "color": {
-          "condition": {
-            "param": "brush",
-            "field": "Year",
-            "type": "nominal"
-          },
-          "value": "grey"
-        }
+        "x": {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
+        "y": {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"},
+        "color": {"field": "Entity", "type": "nominal"},
+        "tooltip": [
+          {"field": "Entity", "type": "nominal"},
+          {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
+          {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "mark": "point",
+      "transform": [{
+        "filter": {"selection": "clicked"}
+      }],
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"},
+        "color": {"field": "Entity", "type": "nominal"}
       }
     }
-  }
+  ] 
+}
+
+
+    
+  

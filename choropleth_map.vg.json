@@ -28,7 +28,7 @@
       },
       {
         "data" : {
-          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_dataset.csv" 
+          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv" 
         },
         "selection": {
           "yearSlider": {

@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_dataset.csv"},  
   "repeat": {
-    "row": ["gdp_per_capita", "Value_co2_emissions_kt_by_country", "Access to electricity (% of population)","Energy intensity level of primary energy (MJ/$2017 PPP GDP)","Renewable energy share in the total final energy consumption (%)"],
-    "column": ["Renewable energy share in the total final energy consumption (%)", "Energy intensity level of primary energy (MJ/$2017 PPP GDP)", "Access to electricity (% of population)","Value_co2_emissions_kt_by_country","gdp_per_capita"]
+    "row": ["Access to clean fuels for cooking", "Electricity from fossil fuels (TWh)", "Access to electricity (% of population)","Value_co2_emissions_kt_by_country","Renewable energy share in the total final energy consumption (%)","Electricity from renewables (TWh)"],
+    "column": ["Electricity from renewables (TWh)", "Renewable energy share in the total final energy consumption (%)","Value_co2_emissions_kt_by_country", "Access to electricity (% of population)","Electricity from fossil fuels (TWh)","Access to clean fuels for cooking"]
   }, 
   "spec": {
     "width":150,
@@ -51,8 +51,8 @@
     },
     "transform": [
       {
-        "regression": "WRI",
-        "on": "Exposure"
+        "regression": "Electricity from fossil fuels (TWh)",
+        "on": "Value_co2_emissions_kt_by_country"
       }
     ],
     "encoding": {
@@ -74,8 +74,8 @@
   },
   "transform": [
     {
-      "regression": "Vulnerability",
-      "on": "Susceptibility"
+      "regression": "Electricity from fossil fuels (TWh)",
+      "on": "Electricity from renewables (TWh)"
     }
   ],
   "encoding": {
@@ -97,8 +97,8 @@
 },
 "transform": [
   {
-    "regression": "Lack of Coping Capabilities",
-    "on": "Vulnerability"
+    "regression": "Electricity from renewables (TWh)",
+    "on": "Value_co2_emissions_kt_by_country"
   }
 ],
 "encoding": {
@@ -120,8 +120,8 @@
 },
 "transform": [
   {
-    "regression": "Vulnerability",
-    "on": "Lack of Adaptive Capacities"
+    "regression": "Access to clean fuels for cooking",
+    "on": "Renewable energy share in the total final energy consumption (%)"
   }
 ],
 "encoding": {
@@ -143,8 +143,8 @@
 },
 "transform": [
   {
-    "regression": "Lack of Coping Capabilities",
-    "on": "Lack of Adaptive Capacities"
+    "regression": "Access to electricity (% of population)",
+    "on": "Renewable energy share in the total final energy consumption (%)"
   }
 ],
 "encoding": {
@@ -166,31 +166,8 @@
 },
 "transform": [
   {
-    "regression": "Lack of Coping Capabilities",
-    "on": "Susceptibility"
-  }
-],
-"encoding": {
-  "x": {
-    "field": {"repeat": "column"},
-    "type": "quantitative"
-  },
-  "y": {
-    "field": {"repeat": "row"},
-    "type": "quantitative"
-  }
-}
-
-},
-{
-"mark": {
-  "type": "line",
-  "color": "yellow"
-},
-"transform": [
-  {
-    "regression": "Susceptibility",
-    "on": "Lack of Adaptive Capacities"
+    "regression": "Access to electricity (% of population)",
+    "on": "Access to clean fuels for cooking"
   }
 ],
 "encoding": {
