@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple radial chart with embedded data.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv"
+    },
+    "width":600,
+    "height":500,
+    "params": [
+        {
+        "name": "Year_selection",
+        "value": 2007,
+        "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+        }}
+    ],
+    "transform": [
+        {
+            "filter": "datum.Year == Year_selection"    
+        },
+      {
+        "aggregate": [
+          {"op": "sum", "field": "Electricity from fossil fuels (TWh)", "as": "Fossil Fuels"},
+          {"op": "sum", "field": "Electricity from nuclear (TWh)", "as": "Nuclear"},
+          {"op": "sum", "field": "Electricity from renewables (TWh)", "as": "Renewables"}
+        ],
+        "groupby": ["Year"]
+      },
+      {
+        "calculate": "datum['Fossil Fuels'] + datum['Nuclear'] + datum['Renewables']",
+        "as": "Total"
+      },
+      {
+        "fold": ["Fossil Fuels", "Nuclear", "Renewables"],
+        "as": ["Source", "Value"]
+      },
+      {
+        "calculate": "datum.Value / datum.Total * 100",
+        "as": "Percentage"
+      }
+    ],
+    "layer": [
+      {
+        "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+      },
+      {
+        "mark": {"type": "text", "radiusOffset": 30,"stroke": "#000000","fontSize":20},
+        "encoding": {
+          "text": {"field": "Percentage", "type": "quantitative","format":".1f"},
+          "theta": {"field": "Value", "type": "quantitative", "stack": true},
+          "angle": {"value": 0}
+        }
+      },
+      {
+        "mark": {"type": "text", "radiusOffset": -30,"stroke": "#000000","fontSize":20},
+        "encoding": {
+          "text": {"field": "Source", "type": "nominal"},
+          "theta": {"field": "Value", "type": "quantitative", "stack": true}
+        }
+      }
+
+    ],
+    "encoding": {
+      "theta": {"field": "Value", "type": "quantitative", "stack": true},
+      "radius": {"field": "Value", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "Source", "type": "nominal", "legend": null}
+    }
+  }
+  

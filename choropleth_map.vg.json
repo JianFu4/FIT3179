@@ -1,9 +1,23 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Primary energy consumption per capita(kWh/person) (2000-2020)",
-    "width": 800,
-    "height": 400,
+    "width": 1200,
+    "height": 500,
     "projection": {"type":"equalEarth"},
+
+    "params": [
+      {
+        "name": "Year_selection",
+        "value": 2020,
+        "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+     }
+    ],
     "layer":[
       {
         "data": {
@@ -30,55 +44,82 @@
         "data" : {
           "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv" 
         },
-        "selection": {
-          "yearSlider": {
-              "type": "single",
-              "fields": ["Year"],
-              "bind": {
-                  "input": "range",
-                  "min": 2000,
-                  "max": 2020,
-                  "step": 1,
-                  "name": "Year"
+        
+        "transform": [
+          {
+            "lookup": "Region",
+            "from":{
+              "data":{
+                "url":  "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+                "format":{
+                  "type": "topojson",
+                  "feature": "ne_110m_admin_0_countries"
+                }
               },
-              "init": {"Year": 2020}
-          }
-      },
-        "transform": [{"filter" : "datum.Year == yearSlider.Year"}],
-        "mark" : {"type":"circle",
-        "opacity": 0.7,
-        "color" : "#FFA500",
-        "stroke" : "#000000",
-        "strokeWidth" : 0.2,
-        "strokeOpacity" : 1 , 
-        "tooltip": {"content": "data"}},
-        "encoding": {
-          "longitude": {"field":"Longitude","type": "quantitative"},
-          "latitude": {"field":"Latitude","type": "quantitative"},
-          "size" : {"field":"Primary energy consumption per capita (kWh/person)",
-          "type": "quantitative",
-          "title": "Primary energy consumption per capita (kWh/person)",
-          "scale" : {"domain":[0, 263000]}
+              "key": "properties.name"
+            },
+            "as": "geo"
           },
-          "tooltip":[
-             {
-        "field": "Entity",
-        "type": "nominal",
-        "title": "Country"
-      },
-      {
-        "field": "Primary energy consumption per capita (kWh/person)",
-        "type": "quantitative",
-        "title": "Energy Consumption (kWh/person)"
-      },
-      {
-        "field": "Land Area(Km2)",
-        "type": "quantitative",
-        "title": "Land Area(Km2)"
-      }
-          ]
-        }
+          {"filter" : "datum.Year == Year_selection"}
+        
+        ],
+        "layer": [{
+          "params": [{
+            "name" : "highlight",
+            "select":{
+              "type" : "point",
+              "encoding" : ["shape"],
+              "on" : "mouseover",
+              "clear" : "mouseout"
+            }
+          } 
 
-      }
-    ]
-}
+
+
+          ],
+          "mark": {"type": "geoshape"},
+          "encoding" : {
+            "shape" : { "field" : "geo", "type": "geojson"
+          },
+          "color" : {
+            "field" : "Primary energy consumption per capita (kWh/person)",
+            "type": "quantitative",
+            "scale": {"domain": [0,263000]}
+          },
+          "tooltip" : [
+            {
+              "field": "Entity",
+              "type": "nominal",
+              "title": "Country"
+            },
+            {
+              "field": "Primary energy consumption per capita (kWh/person)",
+              "type": "quantitative",
+              "title": "Energy Consumption (kWh/person)"
+            },
+            {
+              "field": "Land Area(Km2)",
+              "type": "quantitative",
+              "title": "Land Area(Km2)"
+            }
+
+          ],
+          "stroke": { "condition":{"param": "highlight","empty": false, "value": "white"}},
+          "strokeWidth":{"condition":{"param": "highlight","empty": false,"value" : 1.5},"value":0}
+        }},
+      {
+        "mark": {
+          "type": "text",
+          "align" : "left",
+          "baseline" : "middle",
+          "dx" : 350,
+          "dy": 100,
+          "fontSize" : 12
+        },
+        "encoding":{
+          "text": { "value" : "Australia"},
+          "color" : { "value": "black"}
+        }
+      }]
+        
+}]}

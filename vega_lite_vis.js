@@ -14,3 +14,7 @@ vegaEmbed("#bar_chart", vg_3).then(function(result) {
 var vg_4 = "scatter_plot_test.vg.json";
 vegaEmbed("#test", vg_4).then(function(result) {
 }).catch(console.error);
+
+var vg_5 = "pie_test.vg.json";
+vegaEmbed("#pie_test", vg_5).then(function(result) {
+}).catch(console.error);

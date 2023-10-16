@@ -1,0 +1,84 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Primary energy consumption per capita(kWh/person) (2000-2020)",
+    "width": 800,
+    "height": 400,
+    "projection": {"type":"equalEarth"},
+    "layer":[
+      {
+        "data": {
+      "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+    "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+          "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+      },
+      {
+        "data" : {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+          "format":{"type": "topojson","feature": "oceans"}
+        },
+        "mark":{"type": "geoshape","fill":"skyblue"}
+      },
+      {
+        "data" : {
+          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv" 
+        },
+        "selection": {
+          "yearSlider": {
+              "type": "single",
+              "fields": ["Year"],
+              "bind": {
+                  "input": "range",
+                  "min": 2000,
+                  "max": 2020,
+                  "step": 1,
+                  "name": "Year"
+              },
+              "init": {"Year": 2020}
+          }
+      },
+        "transform": [{"filter" : "datum.Year == yearSlider.Year"}],
+        "mark" : {"type":"circle",
+        "opacity": 0.7,
+        "color" : "#FFA500",
+        "stroke" : "#000000",
+        "strokeWidth" : 0.2,
+        "strokeOpacity" : 1 , 
+        "tooltip": {"content": "data"}},
+        "encoding": {
+          "longitude": {"field":"Longitude","type": "quantitative"},
+          "latitude": {"field":"Latitude","type": "quantitative"},
+          "size" : {"field":"Primary energy consumption per capita (kWh/person)",
+          "type": "quantitative",
+          "title": "Primary energy consumption per capita (kWh/person)",
+          "scale" : {"domain":[0, 263000]}
+          },
+          "tooltip":[
+             {
+        "field": "Entity",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "Primary energy consumption per capita (kWh/person)",
+        "type": "quantitative",
+        "title": "Energy Consumption (kWh/person)"
+      },
+      {
+        "field": "Land Area(Km2)",
+        "type": "quantitative",
+        "title": "Land Area(Km2)"
+      }
+          ]
+        }
+
+      }
+    ]
+}
