@@ -103,20 +103,6 @@
             }
 
           ]
-        }},
-      {
-        "mark": {
-          "type": "text",
-          "align" : "left",
-          "baseline" : "middle",
-          "dx" : 350,
-          "dy": 100,
-          "fontSize" : 12
-        },
-        "encoding":{
-          "text": { "value" : "Australia"},
-          "color" : { "value": "black"}
-        }
-      }]
+        }}]
         
 }
