@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "An interactive scatter plot of global health statistics by Region and year.",
-  "data": {"url": "https://raw.githubusercontent.com/wiinnieeee/3179/main/Project2/data/world_risk_index_dot3.csv",
+  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_data_scatter.csv",
   "format":{"type":"csv",  "parse": {
     "WRI": "number", "Exposure": "number", "year":"number"
    }}},
@@ -23,38 +23,8 @@
       },
       "encoding": {"text": {"field": "year"}}
     },
+  
     {
-      "mark": {
-      "type": "text",
-      "align": "left",
-      "baseline": "top",
-      "dx": -50,
-      "dy":-100,
-      "fontSize": 14,
-      "font":"Roboto"
-      },
-      "encoding": {
-      "text": {"value":"Countries from Oceania are more dangerous"},
-      "color": {"value":"black"}
-      }
-  },
-  {
-    "mark": {
-    "type": "text",
-    "align": "left",
-    "baseline": "top",
-    "dx": -150,
-    "dy":150,
-    "fontSize": 14,
-    "font":"Roboto"
-    },
-    "encoding": {
-    "text": {"value":"African countries are more consistent over years"},
-    "color": {"value":"black"}
-    }
-},
-    {
-      "title":{"text":"Exposure Against WRI Trend for Each Continent Across Years", "font":"Roboto"},
       "transform": [
         {
           "lookup": "Continent",
@@ -63,10 +33,10 @@
             "fields": ["name"],
             "data": {
               "values": [
-                {"id": 0, "name": "Africas"},
-                {"id": 1, "name": "Americas"},
-                {"id": 2, "name": "Asia"},
-                {"id": 3, "name": "Europe"},
+                {"id": 0, "name": "Asia"},
+                {"id": 1, "name": "Europe"},
+                {"id": 2, "name": "Africa"},
+                {"id": 3, "name": "Americas"},
                 {"id": 4, "name": "Oceania"}
               ]
             }
@@ -77,16 +47,13 @@
       
       "encoding": {
         "x": {
-          "field": "WRI",
-          "type": "quantitative",
-          "scale": {"domain": [0, 60]},
-          "axis": {"tickCount": 5, "title": "WRI", "titleFont":"Roboto", "labelFont":"Roboto"}
+          "field": "Electricity from fossil fuels (TWh)",
+          "type": "quantitative"
+          
         },
         "y": {
-          "field": "Exposure",
-          "type": "quantitative",
-          "scale": {"domain": [0, 100]},
-          "axis": {"tickCount": 5, "title": "Exposure", "titleFont":"Roboto", "labelFont":"Roboto"}
+          "field": "Value_co2_emissions_kt_by_country",
+          "type": "quantitative"
         }
         
       },
@@ -119,7 +86,7 @@
           "params": [
             {
               "name": "year",
-              "value": [{"year": 2021}],
+              "value": [{"year": 2020}],
               "select": {
                 "type": "point",
                 "fields": ["year"]
@@ -127,7 +94,7 @@
               "bind": {
                 "name": "Year",
                 "input": "range",
-                "min": 2011, "max": 2021, "step": 1
+                "min": 2000, "max": 2020, "step": 1
               }
             },
             {
@@ -201,133 +168,4 @@
         }
       ]
     }
-  ]},
-  {
-    "width": 500,
-    "height":400,
-    "title":{"text":"Trend of WRI of Selected Countries", "font":"Roboto"},
-  "layer":[{
-  "encoding": {
-    "x": {"title": "Year", "field": "year", "type": "nominal","axis": {"tickCount": 1, "title": "Year", "titleFont":"Roboto", "labelFont":"Roboto"}},
-    "y": {"title": "WRI", "aggregate": "average", "field": "WRI", "scale": {"domain": [0,60]},"axis": {"title": "WRI", "titleFont":"Roboto", "labelFont":"Roboto"}}
-  },
-  "mark": {"type": "line", "color": "#000000"},
-  "transform": [{"filter": {"param": "clicked"}}]
-  
-},
-{"encoding": {
-  "color":{"value":"red"},
-"x": {"title": "Year", "field": "year", "type": "nominal"},
-"y": {"title": "WRI", "aggregate": "average", "field": "WRI", "scale": {"domain": [0,60]}},
-"tooltip":
-[{"title":"Year", "field":"year", "type": "nominal"},
-{"title":"WRI", "field": "WRI", "aggregate":"average", "type": "quantitative", "format":".2f"}]
-},
-
-"mark": {"type": "point", "color": "#3810bb"},
-"transform": [{"filter": {"param": "clicked"}}]
-},
-{
-"transform": [
-  {
-    "filter": {
-      "and": [
-        {"param": "year"},
-        {"or": [
-          {"param": "clicked", "empty": false},
-          {"param": "hovered", "empty": false}
-        ]}
-      ]
-    }
-  }
-],
-"mark": {
-  "type": "text",
-  "y":20,
-  "yOffset": 100,
-  "fontSize": 20,
-  "fontWeight": "bold",
-  "opacity":0.5
-},
-"encoding": {
-  "text": {"field": "Region"}
-}
-},{
-"encoding": {
-  "x": {"datum": "2019"}
-},
-"layer": [{
-  "mark": {
-    "type":"rule",
-    "strokeOpacity":0.3,
-    "color":"red",
-    "strokeWidth":1,
-    "strokeDash":[8, 8]
-}}, {
-  "mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "middle",
-    "dx": 70,
-    "dy": -210,
-    "fontSize":12,
-    "font":"Roboto",
-    "x": "width",
-    "color":"red",
-    "text": "Australian Wildfire"
-    
-  }
-}]
-}, {
-"encoding": {
-  "x": {"datum": "2011"}
-},
-"layer": [{
-  "mark": {
-    "type":"rule",
-    "strokeOpacity":0.3,
-    "color":"red",
-    "strokeWidth":1,
-    "strokeDash":[8, 8]
-}}, {
-  "mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "middle",
-    "dx": 150,
-    "dy": -210,
-    "fontSize":12,
-    "font":"Roboto",
-    "x": "width",
-    "color":"red",
-    "text": "Tohoku Earthquake and Tsunami"
-    
-  }
-}]
-},{
-"encoding": {
-  "x": {"datum": "2015"}
-},
-"layer": [{
-  "mark": {
-    "type":"rule",
-    "strokeOpacity":0.3,
-    "color":"red",
-    "strokeWidth":1,
-    "strokeDash":[8, 8]
-}}, {
-  "mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "middle",
-    "dx": 70,
-    "dy": -210,
-    "fontSize":12,
-    "font":"Roboto",
-    "x": "width",
-    "color":"red",
-    "text": "Nepal Earthquake"
-    
-  }
-}]
-}]}]}
+  ]}]}
