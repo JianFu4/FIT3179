@@ -1,52 +1,47 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv"},
-  "hconcat": [
+  "data": {
+    "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_scatter.csv"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2019,
+      "bind": {
+      "input": "range",
+      "min": 2000,
+      "max": 2019,
+      "step": 1,
+      "name": "Year: "
+    }
+   }
+  ],
+  "layer": [
     {
       "mark": "point",
-      
-      
-      "selection": {
-        "clicked": {
-          "type": "single",
-          "nearest": true,
-          "on": "click",
-          "encodings": ["x", "y"],
-          "empty": "none",
-          "fields": ["Entity"]
-        }
-      },
-      
-
-
-
-
-
+      "transform": [
+        {"filter" : "datum.year == Year_selection"}
+        
+      ],
       "encoding": {
-        "x": {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
-        "y": {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"},
+        "x": {
+          "field": "Electricity from fossil fuels (TWh)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Value_co2_emissions_kt_by_country",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "quantitative"
+        },
         "tooltip": [
           {"field": "Entity", "type": "nominal"},
           {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
           {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"}
         ]
       }
-    },
-    {
-      "mark": "point",
-      "transform": [{
-        "filter": {"selection": "clicked"}
-      }],
-      "encoding": {
-        "x": {"field": "Year", "type": "temporal"},
-        "y": {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"},
-        "color": {"field": "Entity", "type": "nominal"}
-      }
     }
-  ] 
+  ]
 }
-
-
-    
-  

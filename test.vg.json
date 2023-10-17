@@ -3,7 +3,7 @@
   "description": "An interactive scatter plot of global health statistics by Region and year.",
   "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_data_scatter.csv",
   "format":{"type":"csv",  "parse": {
-    "WRI": "number", "Exposure": "number", "year":"number"
+    "Electricity from fossil fuels (TWh)": "number", "Value_co2_emissions_kt_by_country": "number", "year":"number"
    }}},
   "hconcat": [{
     "width": 500,
