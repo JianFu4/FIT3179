@@ -18,3 +18,7 @@ vegaEmbed("#test", vg_4).then(function(result) {
 var vg_5 = "pie_test.vg.json";
 vegaEmbed("#pie_test", vg_5).then(function(result) {
 }).catch(console.error);
+
+var vg_6 = "test.vg.json";
+vegaEmbed("#test", vg_6).then(function(result) {
+}).catch(console.error);

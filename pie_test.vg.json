@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "An interactive scatter plot of CO2 emission statistics by region and year.",
-  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_scatter.csv"},
   "width": 800,
   "height": 500,
   "layer": [
