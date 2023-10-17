@@ -1,316 +1,316 @@
-region,Year,key,value
-Africa,2000,fossil fuels,325.7
-Africa,2000,nuclear,13.01
-Africa,2000,renewables,66.71000000000001
-Africa,2001,fossil fuels,337.63
-Africa,2001,nuclear,10.72
-Africa,2001,renewables,73.26
-Africa,2002,fossil fuels,358.81
-Africa,2002,nuclear,11.99
-Africa,2002,renewables,75.25999999999999
-Africa,2003,fossil fuels,382.59999999999997
-Africa,2003,nuclear,12.66
-Africa,2003,renewables,73.91
-Africa,2004,fossil fuels,404.71
-Africa,2004,nuclear,14.28
-Africa,2004,renewables,78.57
-Africa,2005,fossil fuels,422.87
-Africa,2005,nuclear,12.24
-Africa,2005,renewables,81.65
-Africa,2006,fossil fuels,444.12
-Africa,2006,nuclear,10.07
-Africa,2006,renewables,84.75
-Africa,2007,fossil fuels,465.28
-Africa,2007,nuclear,12.6
-Africa,2007,renewables,85.38
-Africa,2008,fossil fuels,472.33
-Africa,2008,nuclear,12.75
-Africa,2008,renewables,87.48
-Africa,2009,fossil fuels,471.88
-Africa,2009,nuclear,11.57
-Africa,2009,renewables,90.93
-Africa,2010,fossil fuels,525.24
-Africa,2010,nuclear,12.9
-Africa,2010,renewables,103.2
-Africa,2011,fossil fuels,529.72
-Africa,2011,nuclear,12.94
-Africa,2011,renewables,105.29
-Africa,2012,fossil fuels,555.64
-Africa,2012,nuclear,12.4
-Africa,2012,renewables,106.93
-Africa,2013,fossil fuels,564.34
-Africa,2013,nuclear,13.61
-Africa,2013,renewables,113.45
-Africa,2014,fossil fuels,578.96
-Africa,2014,nuclear,14.76
-Africa,2014,renewables,122.05
-Africa,2015,fossil fuels,599.33
-Africa,2015,nuclear,10.97
-Africa,2015,renewables,126.83
-Africa,2016,fossil fuels,599.63
-Africa,2016,nuclear,15.21
-Africa,2016,renewables,128.83
-Africa,2017,fossil fuels,619.59
-Africa,2017,nuclear,15.09
-Africa,2017,renewables,137.44
-Africa,2018,fossil fuels,626.71
-Africa,2018,nuclear,10.56
-Africa,2018,renewables,150.05
-Africa,2019,fossil fuels,625.47
-Africa,2019,nuclear,13.6
-Africa,2019,renewables,159.3
-Africa,2020,fossil fuels,600.99
-Africa,2020,nuclear,11.62
-Africa,2020,renewables,163.94
-Americas,2000,fossil fuels,3180.69
-Americas,2000,nuclear,841.79
-Americas,2000,renewables,1251.58
-Americas,2001,fossil fuels,3180.7299999999996
-Americas,2001,nuclear,870.7900000000001
-Americas,2001,renewables,1120.6299999999999
-Americas,2002,fossil fuels,3231.61
-Americas,2002,nuclear,880.3
-Americas,2002,renewables,1217.8999999999999
-Americas,2003,fossil fuels,3274.86
-Americas,2003,nuclear,865.2900000000001
-Americas,2003,renewables,1238.56
-Americas,2004,fossil fuels,3366.9000000000005
-Americas,2004,nuclear,902.04
-Americas,2004,renewables,1257.27
-Americas,2005,fossil fuels,3457.18
-Americas,2005,nuclear,894.71
-Americas,2005,renewables,1321.51
-Americas,2006,fossil fuels,3439.9
-Americas,2006,nuclear,910.19
-Americas,2006,renewables,1366.5700000000002
-Americas,2007,fossil fuels,3585.4999999999995
-Americas,2007,nuclear,922.93
-Americas,2007,renewables,1370.3600000000001
-Americas,2008,fossil fuels,3524.4800000000005
-Americas,2008,nuclear,923.9300000000001
-Americas,2008,renewables,1424.26
-Americas,2009,fossil fuels,3309.6099999999997
-Americas,2009,nuclear,913.9
-Americas,2009,renewables,1466.83
-Americas,2010,fossil fuels,3518.4599999999996
-Americas,2010,nuclear,918.62
-Americas,2010,renewables,1499.02
-Americas,2011,fossil fuels,3435.8700000000003
-Americas,2011,nuclear,908.84
-Americas,2011,renewables,1647.62
-Americas,2012,fossil fuels,3476.0
-Americas,2012,nuclear,888.3000000000001
-Americas,2012,renewables,1628.51
-Americas,2013,fossil fuels,3493.87
-Americas,2013,nuclear,918.36
-Americas,2013,renewables,1665.01
-Americas,2014,fossil fuels,3515.11
-Americas,2014,nuclear,927.4
-Americas,2014,renewables,1692.97
-Americas,2015,fossil fuels,3514.38
-Americas,2015,nuclear,924.9599999999999
-Americas,2015,renewables,1710.17
-Americas,2016,fossil fuels,3416.2400000000002
-Americas,2016,nuclear,934.44
-Americas,2016,renewables,1833.05
-Americas,2017,fossil fuels,3274.8100000000004
-Americas,2017,nuclear,931.72
-Americas,2017,renewables,1957.42
-Americas,2018,fossil fuels,3399.19
-Americas,2018,nuclear,936.73
-Americas,2018,renewables,2016.31
-Americas,2019,fossil fuels,3319.66
-Americas,2019,nuclear,938.89
-Americas,2019,renewables,2044.49
-Americas,2020,fossil fuels,3133.4500000000003
-Americas,2020,nuclear,916.67
-Americas,2020,renewables,2128.17
-Asia,2000,fossil fuels,3049.53
-Asia,2000,nuclear,340.68
-Asia,2000,renewables,572.22
-Asia,2001,fossil fuels,3175.86
-Asia,2001,nuclear,344.19000000000005
-Asia,2001,renewables,614.75
-Asia,2002,fossil fuels,3440.11
-Asia,2002,nuclear,328.71
-Asia,2002,renewables,637.66
-Asia,2003,fossil fuels,3791.98
-Asia,2003,nuclear,293.12
-Asia,2003,renewables,661.23
-Asia,2004,fossil fuels,4080.94
-Asia,2004,nuclear,344.18
-Asia,2004,renewables,779.14
-Asia,2005,fossil fuels,4423.22
-Asia,2005,nuclear,356.23
-Asia,2005,renewables,816.36
-Asia,2006,fossil fuels,4825.32
-Asia,2006,nuclear,368.98
-Asia,2006,renewables,896.23
-Asia,2007,fossil fuels,5374.1
-Asia,2007,nuclear,351.96
-Asia,2007,renewables,947.5699999999999
-Asia,2008,fossil fuels,5459.4
-Asia,2008,nuclear,328.88
-Asia,2008,renewables,1105.68
-Asia,2009,fossil fuels,5722.679999999999
-Asia,2009,nuclear,354.84999999999997
-Asia,2009,renewables,1108.1
-Asia,2010,fossil fuels,6282.28
-Asia,2010,nuclear,381.03000000000003
-Asia,2010,renewables,1287.8
-Asia,2011,fossil fuels,6987.85
-Asia,2011,nuclear,279.0
-Asia,2011,renewables,1327.76
-Asia,2012,fossil fuels,7342.67
-Asia,2012,nuclear,153.97
-Asia,2012,renewables,1534.8799999999999
-Asia,2013,fossil fuels,7750.07
-Asia,2013,nuclear,161.81
-Asia,2013,renewables,1679.2
-Asia,2014,fossil fuels,8108.5599999999995
-Asia,2014,nuclear,174.76000000000002
-Asia,2014,renewables,1886.27
-Asia,2015,fossil fuels,8045.69
-Asia,2015,nuclear,219.82999999999998
-Asia,2015,renewables,2051.88
-Asia,2016,fossil fuels,8315.99
-Asia,2016,nuclear,273.58
-Asia,2016,renewables,2214.5
-Asia,2017,fossil fuels,8717.380000000001
-Asia,2017,nuclear,323.78
-Asia,2017,renewables,2417.42
-Asia,2018,fossil fuels,9132.71
-Asia,2018,nuclear,393.05999999999995
-Asia,2018,renewables,2661.81
-Asia,2019,fossil fuels,9213.38
-Asia,2019,nuclear,468.84
-Asia,2019,renewables,2931.68
-Asia,2020,fossil fuels,9160.91
-Asia,2020,nuclear,466.42
-Asia,2020,renewables,3132.4500000000003
-Europe,2000,fossil fuels,1757.9099999999999
-Europe,2000,nuclear,1047.47
-Europe,2000,renewables,622.72
-Europe,2001,fossil fuels,1780.3400000000001
-Europe,2001,nuclear,1080.63
-Europe,2001,renewables,634.41
-Europe,2002,fossil fuels,1836.3899999999999
-Europe,2002,nuclear,1094.05
-Europe,2002,renewables,590.76
-Europe,2003,fossil fuels,1919.46
-Europe,2003,nuclear,1103.3899999999999
-Europe,2003,renewables,574.86
-Europe,2004,fossil fuels,1921.04
-Europe,2004,nuclear,1121.09
-Europe,2004,renewables,627.95
-Europe,2005,fossil fuels,1944.86
-Europe,2005,nuclear,1108.57
-Europe,2005,renewables,659.53
-Europe,2006,fossil fuels,1984.6999999999998
-Europe,2006,nuclear,1106.48
-Europe,2006,renewables,669.3100000000001
-Europe,2007,fossil fuels,2055.7799999999997
-Europe,2007,nuclear,1054.3000000000002
-Europe,2007,renewables,724.17
-Europe,2008,fossil fuels,2015.72
-Europe,2008,nuclear,1053.33
-Europe,2008,renewables,784.91
-Europe,2009,fossil fuels,1848.04
-Europe,2009,nuclear,1003.21
-Europe,2009,renewables,809.8100000000001
-Europe,2010,fossil fuels,1896.01
-Europe,2010,nuclear,1030.96
-Europe,2010,renewables,892.8100000000001
-Europe,2011,fossil fuels,1862.06
-Europe,2011,nuclear,1022.56
-Europe,2011,renewables,880.58
-Europe,2012,fossil fuels,1785.68
-Europe,2012,nuclear,996.83
-Europe,2012,renewables,998.68
-Europe,2013,fossil fuels,1677.4
-Europe,2013,nuclear,984.9200000000001
-Europe,2013,renewables,1088.62
-Europe,2014,fossil fuels,1540.34
-Europe,2014,nuclear,991.08
-Europe,2014,renewables,1128.91
-Europe,2015,fossil fuels,1555.44
-Europe,2015,nuclear,966.75
-Europe,2015,renewables,1166.3899999999999
-Europe,2016,fossil fuels,1586.7
-Europe,2016,nuclear,940.87
-Europe,2016,renewables,1188.97
-Europe,2017,fossil fuels,1593.63
-Europe,2017,nuclear,934.82
-Europe,2017,renewables,1203.24
-Europe,2018,fossil fuels,1506.28
-Europe,2018,nuclear,935.81
-Europe,2018,renewables,1290.4
-Europe,2019,fossil fuels,1417.39
-Europe,2019,nuclear,929.8
-Europe,2019,renewables,1324.05
-Europe,2020,fossil fuels,1271.83
-Europe,2020,nuclear,833.89
-Europe,2020,renewables,1445.23
-Oceania,2000,fossil fuels,194.4
-Oceania,2000,nuclear,0.0
-Oceania,2000,renewables,46.53
-Oceania,2001,fossil fuels,211.10000000000002
-Oceania,2001,nuclear,0.0
-Oceania,2001,renewables,44.17
-Oceania,2002,fossil fuels,212.22
-Oceania,2002,nuclear,0.0
-Oceania,2002,renewables,47.32
-Oceania,2003,fossil fuels,211.67
-Oceania,2003,nuclear,0.0
-Oceania,2003,renewables,47.26
-Oceania,2004,fossil fuels,218.52
-Oceania,2004,nuclear,0.0
-Oceania,2004,renewables,51.89
-Oceania,2005,fossil fuels,213.98999999999998
-Oceania,2005,nuclear,0.0
-Oceania,2005,renewables,49.470000000000006
-Oceania,2006,fossil fuels,216.83
-Oceania,2006,nuclear,0.0
-Oceania,2006,renewables,51.33
-Oceania,2007,fossil fuels,226.5
-Oceania,2007,nuclear,0.0
-Oceania,2007,renewables,51.81
-Oceania,2008,fossil fuels,229.26
-Oceania,2008,nuclear,0.0
-Oceania,2008,renewables,48.949999999999996
-Oceania,2009,fossil fuels,231.89999999999998
-Oceania,2009,nuclear,0.0
-Oceania,2009,renewables,51.38
-Oceania,2010,fossil fuels,228.17
-Oceania,2010,nuclear,0.0
-Oceania,2010,renewables,55.65999999999999
-Oceania,2011,fossil fuels,228.06
-Oceania,2011,nuclear,0.0
-Oceania,2011,renewables,62.97
-Oceania,2012,fossil fuels,222.92
-Oceania,2012,nuclear,0.0
-Oceania,2012,renewables,60.589999999999996
-Oceania,2013,fossil fuels,211.13
-Oceania,2013,nuclear,0.0
-Oceania,2013,renewables,68.66000000000001
-Oceania,2014,fossil fuels,219.85
-Oceania,2014,nuclear,0.0
-Oceania,2014,renewables,72.57000000000001
-Oceania,2015,fossil fuels,211.91
-Oceania,2015,nuclear,0.0
-Oceania,2015,renewables,70.52
-Oceania,2016,fossil fuels,220.56
-Oceania,2016,nuclear,0.0
-Oceania,2016,renewables,77.05
-Oceania,2017,fossil fuels,223.48999999999998
-Oceania,2017,nuclear,0.0
-Oceania,2017,renewables,78.52
-Oceania,2018,fossil fuels,221.03
-Oceania,2018,nuclear,0.0
-Oceania,2018,renewables,81.72
-Oceania,2019,fossil fuels,210.82999999999998
-Oceania,2019,nuclear,0.0
-Oceania,2019,renewables,92.0
-Oceania,2020,fossil fuels,202.20999999999998
-Oceania,2020,nuclear,0.0
-Oceania,2020,renewables,101.25
+source,Year,key,value
+fossil fuels,2000,Africa,325.7
+fossil fuels,2000,Americas,3180.69
+fossil fuels,2000,Asia,3049.53
+fossil fuels,2000,Europe,1757.9099999999999
+fossil fuels,2000,Oceania,194.4
+fossil fuels,2001,Africa,337.63
+fossil fuels,2001,Americas,3180.7299999999996
+fossil fuels,2001,Asia,3175.86
+fossil fuels,2001,Europe,1780.3400000000001
+fossil fuels,2001,Oceania,211.10000000000002
+fossil fuels,2002,Africa,358.81
+fossil fuels,2002,Americas,3231.61
+fossil fuels,2002,Asia,3440.11
+fossil fuels,2002,Europe,1836.3899999999999
+fossil fuels,2002,Oceania,212.22
+fossil fuels,2003,Africa,382.59999999999997
+fossil fuels,2003,Americas,3274.86
+fossil fuels,2003,Asia,3791.98
+fossil fuels,2003,Europe,1919.46
+fossil fuels,2003,Oceania,211.67
+fossil fuels,2004,Africa,404.71
+fossil fuels,2004,Americas,3366.9000000000005
+fossil fuels,2004,Asia,4080.94
+fossil fuels,2004,Europe,1921.04
+fossil fuels,2004,Oceania,218.52
+fossil fuels,2005,Africa,422.87
+fossil fuels,2005,Americas,3457.18
+fossil fuels,2005,Asia,4423.22
+fossil fuels,2005,Europe,1944.86
+fossil fuels,2005,Oceania,213.98999999999998
+fossil fuels,2006,Africa,444.12
+fossil fuels,2006,Americas,3439.9
+fossil fuels,2006,Asia,4825.32
+fossil fuels,2006,Europe,1984.6999999999998
+fossil fuels,2006,Oceania,216.83
+fossil fuels,2007,Africa,465.28
+fossil fuels,2007,Americas,3585.4999999999995
+fossil fuels,2007,Asia,5374.1
+fossil fuels,2007,Europe,2055.7799999999997
+fossil fuels,2007,Oceania,226.5
+fossil fuels,2008,Africa,472.33
+fossil fuels,2008,Americas,3524.4800000000005
+fossil fuels,2008,Asia,5459.4
+fossil fuels,2008,Europe,2015.72
+fossil fuels,2008,Oceania,229.26
+fossil fuels,2009,Africa,471.88
+fossil fuels,2009,Americas,3309.6099999999997
+fossil fuels,2009,Asia,5722.679999999999
+fossil fuels,2009,Europe,1848.04
+fossil fuels,2009,Oceania,231.89999999999998
+fossil fuels,2010,Africa,525.24
+fossil fuels,2010,Americas,3518.4599999999996
+fossil fuels,2010,Asia,6282.28
+fossil fuels,2010,Europe,1896.01
+fossil fuels,2010,Oceania,228.17
+fossil fuels,2011,Africa,529.72
+fossil fuels,2011,Americas,3435.8700000000003
+fossil fuels,2011,Asia,6987.85
+fossil fuels,2011,Europe,1862.06
+fossil fuels,2011,Oceania,228.06
+fossil fuels,2012,Africa,555.64
+fossil fuels,2012,Americas,3476.0
+fossil fuels,2012,Asia,7342.67
+fossil fuels,2012,Europe,1785.68
+fossil fuels,2012,Oceania,222.92
+fossil fuels,2013,Africa,564.34
+fossil fuels,2013,Americas,3493.87
+fossil fuels,2013,Asia,7750.07
+fossil fuels,2013,Europe,1677.4
+fossil fuels,2013,Oceania,211.13
+fossil fuels,2014,Africa,578.96
+fossil fuels,2014,Americas,3515.11
+fossil fuels,2014,Asia,8108.5599999999995
+fossil fuels,2014,Europe,1540.34
+fossil fuels,2014,Oceania,219.85
+fossil fuels,2015,Africa,599.33
+fossil fuels,2015,Americas,3514.38
+fossil fuels,2015,Asia,8045.69
+fossil fuels,2015,Europe,1555.44
+fossil fuels,2015,Oceania,211.91
+fossil fuels,2016,Africa,599.63
+fossil fuels,2016,Americas,3416.2400000000002
+fossil fuels,2016,Asia,8315.99
+fossil fuels,2016,Europe,1586.7
+fossil fuels,2016,Oceania,220.56
+fossil fuels,2017,Africa,619.59
+fossil fuels,2017,Americas,3274.8100000000004
+fossil fuels,2017,Asia,8717.380000000001
+fossil fuels,2017,Europe,1593.63
+fossil fuels,2017,Oceania,223.48999999999998
+fossil fuels,2018,Africa,626.71
+fossil fuels,2018,Americas,3399.19
+fossil fuels,2018,Asia,9132.71
+fossil fuels,2018,Europe,1506.28
+fossil fuels,2018,Oceania,221.03
+fossil fuels,2019,Africa,625.47
+fossil fuels,2019,Americas,3319.66
+fossil fuels,2019,Asia,9213.38
+fossil fuels,2019,Europe,1417.39
+fossil fuels,2019,Oceania,210.82999999999998
+fossil fuels,2020,Africa,600.99
+fossil fuels,2020,Americas,3133.4500000000003
+fossil fuels,2020,Asia,9160.91
+fossil fuels,2020,Europe,1271.83
+fossil fuels,2020,Oceania,202.20999999999998
+nuclear,2000,Africa,13.01
+nuclear,2000,Americas,841.79
+nuclear,2000,Asia,340.68
+nuclear,2000,Europe,1047.47
+nuclear,2000,Oceania,0.0
+nuclear,2001,Africa,10.72
+nuclear,2001,Americas,870.7900000000001
+nuclear,2001,Asia,344.19000000000005
+nuclear,2001,Europe,1080.63
+nuclear,2001,Oceania,0.0
+nuclear,2002,Africa,11.99
+nuclear,2002,Americas,880.3
+nuclear,2002,Asia,328.71
+nuclear,2002,Europe,1094.05
+nuclear,2002,Oceania,0.0
+nuclear,2003,Africa,12.66
+nuclear,2003,Americas,865.2900000000001
+nuclear,2003,Asia,293.12
+nuclear,2003,Europe,1103.3899999999999
+nuclear,2003,Oceania,0.0
+nuclear,2004,Africa,14.28
+nuclear,2004,Americas,902.04
+nuclear,2004,Asia,344.18
+nuclear,2004,Europe,1121.09
+nuclear,2004,Oceania,0.0
+nuclear,2005,Africa,12.24
+nuclear,2005,Americas,894.71
+nuclear,2005,Asia,356.23
+nuclear,2005,Europe,1108.57
+nuclear,2005,Oceania,0.0
+nuclear,2006,Africa,10.07
+nuclear,2006,Americas,910.19
+nuclear,2006,Asia,368.98
+nuclear,2006,Europe,1106.48
+nuclear,2006,Oceania,0.0
+nuclear,2007,Africa,12.6
+nuclear,2007,Americas,922.93
+nuclear,2007,Asia,351.96
+nuclear,2007,Europe,1054.3000000000002
+nuclear,2007,Oceania,0.0
+nuclear,2008,Africa,12.75
+nuclear,2008,Americas,923.9300000000001
+nuclear,2008,Asia,328.88
+nuclear,2008,Europe,1053.33
+nuclear,2008,Oceania,0.0
+nuclear,2009,Africa,11.57
+nuclear,2009,Americas,913.9
+nuclear,2009,Asia,354.84999999999997
+nuclear,2009,Europe,1003.21
+nuclear,2009,Oceania,0.0
+nuclear,2010,Africa,12.9
+nuclear,2010,Americas,918.62
+nuclear,2010,Asia,381.03000000000003
+nuclear,2010,Europe,1030.96
+nuclear,2010,Oceania,0.0
+nuclear,2011,Africa,12.94
+nuclear,2011,Americas,908.84
+nuclear,2011,Asia,279.0
+nuclear,2011,Europe,1022.56
+nuclear,2011,Oceania,0.0
+nuclear,2012,Africa,12.4
+nuclear,2012,Americas,888.3000000000001
+nuclear,2012,Asia,153.97
+nuclear,2012,Europe,996.83
+nuclear,2012,Oceania,0.0
+nuclear,2013,Africa,13.61
+nuclear,2013,Americas,918.36
+nuclear,2013,Asia,161.81
+nuclear,2013,Europe,984.9200000000001
+nuclear,2013,Oceania,0.0
+nuclear,2014,Africa,14.76
+nuclear,2014,Americas,927.4
+nuclear,2014,Asia,174.76000000000002
+nuclear,2014,Europe,991.08
+nuclear,2014,Oceania,0.0
+nuclear,2015,Africa,10.97
+nuclear,2015,Americas,924.9599999999999
+nuclear,2015,Asia,219.82999999999998
+nuclear,2015,Europe,966.75
+nuclear,2015,Oceania,0.0
+nuclear,2016,Africa,15.21
+nuclear,2016,Americas,934.44
+nuclear,2016,Asia,273.58
+nuclear,2016,Europe,940.87
+nuclear,2016,Oceania,0.0
+nuclear,2017,Africa,15.09
+nuclear,2017,Americas,931.72
+nuclear,2017,Asia,323.78
+nuclear,2017,Europe,934.82
+nuclear,2017,Oceania,0.0
+nuclear,2018,Africa,10.56
+nuclear,2018,Americas,936.73
+nuclear,2018,Asia,393.05999999999995
+nuclear,2018,Europe,935.81
+nuclear,2018,Oceania,0.0
+nuclear,2019,Africa,13.6
+nuclear,2019,Americas,938.89
+nuclear,2019,Asia,468.84
+nuclear,2019,Europe,929.8
+nuclear,2019,Oceania,0.0
+nuclear,2020,Africa,11.62
+nuclear,2020,Americas,916.67
+nuclear,2020,Asia,466.42
+nuclear,2020,Europe,833.89
+nuclear,2020,Oceania,0.0
+renewables,2000,Africa,66.71000000000001
+renewables,2000,Americas,1251.58
+renewables,2000,Asia,572.22
+renewables,2000,Europe,622.72
+renewables,2000,Oceania,46.53
+renewables,2001,Africa,73.26
+renewables,2001,Americas,1120.6299999999999
+renewables,2001,Asia,614.75
+renewables,2001,Europe,634.41
+renewables,2001,Oceania,44.17
+renewables,2002,Africa,75.25999999999999
+renewables,2002,Americas,1217.8999999999999
+renewables,2002,Asia,637.66
+renewables,2002,Europe,590.76
+renewables,2002,Oceania,47.32
+renewables,2003,Africa,73.91
+renewables,2003,Americas,1238.56
+renewables,2003,Asia,661.23
+renewables,2003,Europe,574.86
+renewables,2003,Oceania,47.26
+renewables,2004,Africa,78.57
+renewables,2004,Americas,1257.27
+renewables,2004,Asia,779.14
+renewables,2004,Europe,627.95
+renewables,2004,Oceania,51.89
+renewables,2005,Africa,81.65
+renewables,2005,Americas,1321.51
+renewables,2005,Asia,816.36
+renewables,2005,Europe,659.53
+renewables,2005,Oceania,49.470000000000006
+renewables,2006,Africa,84.75
+renewables,2006,Americas,1366.5700000000002
+renewables,2006,Asia,896.23
+renewables,2006,Europe,669.3100000000001
+renewables,2006,Oceania,51.33
+renewables,2007,Africa,85.38
+renewables,2007,Americas,1370.3600000000001
+renewables,2007,Asia,947.5699999999999
+renewables,2007,Europe,724.17
+renewables,2007,Oceania,51.81
+renewables,2008,Africa,87.48
+renewables,2008,Americas,1424.26
+renewables,2008,Asia,1105.68
+renewables,2008,Europe,784.91
+renewables,2008,Oceania,48.949999999999996
+renewables,2009,Africa,90.93
+renewables,2009,Americas,1466.83
+renewables,2009,Asia,1108.1
+renewables,2009,Europe,809.8100000000001
+renewables,2009,Oceania,51.38
+renewables,2010,Africa,103.2
+renewables,2010,Americas,1499.02
+renewables,2010,Asia,1287.8
+renewables,2010,Europe,892.8100000000001
+renewables,2010,Oceania,55.65999999999999
+renewables,2011,Africa,105.29
+renewables,2011,Americas,1647.62
+renewables,2011,Asia,1327.76
+renewables,2011,Europe,880.58
+renewables,2011,Oceania,62.97
+renewables,2012,Africa,106.93
+renewables,2012,Americas,1628.51
+renewables,2012,Asia,1534.8799999999999
+renewables,2012,Europe,998.68
+renewables,2012,Oceania,60.589999999999996
+renewables,2013,Africa,113.45
+renewables,2013,Americas,1665.01
+renewables,2013,Asia,1679.2
+renewables,2013,Europe,1088.62
+renewables,2013,Oceania,68.66000000000001
+renewables,2014,Africa,122.05
+renewables,2014,Americas,1692.97
+renewables,2014,Asia,1886.27
+renewables,2014,Europe,1128.91
+renewables,2014,Oceania,72.57000000000001
+renewables,2015,Africa,126.83
+renewables,2015,Americas,1710.17
+renewables,2015,Asia,2051.88
+renewables,2015,Europe,1166.3899999999999
+renewables,2015,Oceania,70.52
+renewables,2016,Africa,128.83
+renewables,2016,Americas,1833.05
+renewables,2016,Asia,2214.5
+renewables,2016,Europe,1188.97
+renewables,2016,Oceania,77.05
+renewables,2017,Africa,137.44
+renewables,2017,Americas,1957.42
+renewables,2017,Asia,2417.42
+renewables,2017,Europe,1203.24
+renewables,2017,Oceania,78.52
+renewables,2018,Africa,150.05
+renewables,2018,Americas,2016.31
+renewables,2018,Asia,2661.81
+renewables,2018,Europe,1290.4
+renewables,2018,Oceania,81.72
+renewables,2019,Africa,159.3
+renewables,2019,Americas,2044.49
+renewables,2019,Asia,2931.68
+renewables,2019,Europe,1324.05
+renewables,2019,Oceania,92.0
+renewables,2020,Africa,163.94
+renewables,2020,Americas,2128.17
+renewables,2020,Asia,3132.4500000000003
+renewables,2020,Europe,1445.23
+renewables,2020,Oceania,101.25

@@ -3,30 +3,39 @@
     "description": "A radar chart example, showing multiple dimensions in a radial layout.",
     "width": 400,
     "height": 400,
-    "left":90,
-    "padding-bottom":20,
     "autosize": {"type": "none", "contains": "padding"},
     "title":{"text":"Overview of Region 1"},
     "signals": [
       {"name": "radius", "update": "width / 2"},
         {"name": "reg_select",
-        "value":"Asia",
+        "value":"Fossil Fuels",
         "bind": {
           "input": "select",
-          "options": ["Asia","Europe","Africa","Americas","Oceania"],
-          "labels": ["Asia","Europe","Africa","Americas","Oceania"],
-          "name": "Region: "
+          "options": ["Fossil Fuels","Nuclear","Renewables"],
+          "labels": ["Fossil Fuels","Nuclear","Renewables"],
+          "name": "Energy Source: "
         }
         
-    }
+    },
+    {
+        "name": "Year_selection",
+        "value": 2020,
+        "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+    }}
     ],
     "data": [
       {
         "name": "table",
-        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv",
+        "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_radar.csv",
         "format":{"type":"csv", "delimiter":","},
         "transform": [
-            { "type": "filter", "expr": "reg_select == null || datum.region == reg_select" }
+            { "type": "filter", "expr": "reg_select == null || datum.source == reg_select" },
+            {"type": "filter", "expr": "datum.Year == Year_selection" }
           ]
       },
       {
@@ -60,8 +69,8 @@
       {
         "name": "color",
         "type": "ordinal",
-        "domain": {"data": "table", "field": "region"},
-        "range":{"scheme":"darkblue"}
+        "domain": {"data": "table", "field": "key"},
+        "range":{"scheme":"category10"}
       }
     ],
   
@@ -78,7 +87,7 @@
         "name": "categories",
         "zindex": 1,
         "from": {
-          "facet": {"data": "table", "name": "facet", "groupby": ["region"]}
+          "facet": {"data": "table", "name": "facet", "groupby": ["source"]}
         },
         "marks": [
           {
@@ -87,13 +96,13 @@
             "from": {"data": "facet"},
             "encode": {
               "enter": {
-                "tooltip":{"signal": "{'Region': datum.region,'Key': datum.key, 'Value': datum.value }"},
+                "tooltip":{"signal": "{'Source': datum.source,'Key': datum.key, 'Value': datum.value }"},
                 "interpolate": {"value": "linear-closed"},
                 "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.key))"},
                 "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.key))"},
-                "stroke": {"scale": "color", "field": "region"},
+                "stroke": {"scale": "color", "field": "source"},
                 "strokeWidth": {"value": 1},
-                "fill": {"scale": "color", "field": "region"},
+                "fill": {"scale": "color", "field": "source"},
                 "fillOpacity": {"value": 0.1}
               }
             }
@@ -172,5 +181,9 @@
       }
     ],
     "opacity": { "value": 0.6},
-    "config": {"text":{"font": "Roboto"}}
+    "config": {
+        "text": {
+            "font": "Roboto"
+        }
+    }
   }
