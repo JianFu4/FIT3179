@@ -1,171 +1,158 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "An interactive scatter plot of global health statistics by Region and year.",
-  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_data_scatter.csv",
-  "format":{"type":"csv",  "parse": {
-    "Electricity from fossil fuels (TWh)": "number", "Value_co2_emissions_kt_by_country": "number", "year":"number"
-   }}},
+  "description": "An interactive scatter plot of electricity consumption against CO2 emissions by Region and year.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_scatter.csv"
+  },
   "hconcat": [{
-    "width": 500,
-    "height":400,
-  "layer": [
-    {
-      "transform": [
-        {"filter": {"field": "Region", "equal": "Afghanistan"}},
-        {"filter": {"param": "year"}}
-      ],
-      "mark": {
-        "type": "text",
-        "fontSize": 100,
-        "x": 250,
-        "y": 200,
-        "opacity": 0.1
-      },
-      "encoding": {"text": {"field": "year"}}
-    },
-  
-    {
-      "transform": [
-        {
-          "lookup": "Continent",
-          "from": {
-            "key": "id",
-            "fields": ["name"],
-            "data": {
-              "values": [
-                {"id": 0, "name": "Asia"},
-                {"id": 1, "name": "Europe"},
-                {"id": 2, "name": "Africa"},
-                {"id": 3, "name": "Americas"},
-                {"id": 4, "name": "Oceania"}
-              ]
-            }
-          }
-        }
-      ],
-      
-      
-      "encoding": {
-        "x": {
-          "field": "Electricity from fossil fuels (TWh)",
-          "type": "quantitative"
-          
-        },
-        "y": {
-          "field": "Value_co2_emissions_kt_by_country",
-          "type": "quantitative"
-        }
-        
-      },
-      
-      "layer": [
-        {
+      "width": 500,
+      "height": 400,
+      "layer": [{
+          "transform": [
+              {"filter": {"field": "Region", "equal": "Afghanistan"}},
+              {"filter": {"param": "year"}}
+          ],
           "mark": {
-            "type": "line",
-            "size": 4,
-            "color": "lightgray",
-            "strokeCap": "round"
+              "type": "text",
+              "fontSize": 100,
+              "x": 250,
+              "y": 200,
+              "opacity": 0.1
+          },
+          "encoding": {"text": {"field": "year"}}
+      }],
+      "title": {
+          "text": "Electricity Consumption Against CO2 Emissions Trend for Each Continent Across Years",
+          "font": "Roboto"
+      },
+      "encoding": {
+          "x": {
+              "field": "Electricity from fossil fuels (TWh)",
+              "type": "quantitative",
+              "axis": {"tickCount": 5, "title": "Electricity from fossil fuels (TWh)", "titleFont": "Roboto", "labelFont": "Roboto"}
+          },
+          "y": {
+              "field": "Value_co2_emissions_kt_by_country",
+              "type": "quantitative",
+              "axis": {"tickCount": 5, "title": "CO2 Emissions (kt)", "titleFont": "Roboto", "labelFont": "Roboto"}
+          }
+      },
+      "layer": [{
+          "mark": {
+              "type": "line",
+              "size": 4,
+              "color": "lightgray",
+              "strokeCap": "round"
           },
           "encoding": {
-            "detail": {"field": "Region"},
-            "order": {"field": "year"},
-            "opacity": {
-              "condition": {
-                "test": {"or": [
-                  {"param": "hovered", "empty": false},
-                  {"param": "clicked", "empty": false}
-                ]},
-                "value": 0.8
-              },
-              "value": 0
-            }
+              "detail": {"field": "Region"},
+              "order": {"field": "year"},
+              "opacity": {
+                  "condition": {
+                      "test": {"or": [
+                          {"param": "hovered", "empty": false},
+                          {"param": "clicked", "empty": false}
+                      ]},
+                      "value": 0.8
+                  },
+                  "value": 0
+              }
           }
-        },
-
-        {
-          "params": [
-            {
+      }, {
+          "params": [{
               "name": "year",
-              "value": [{"year": 2020}],
+              "value": [{"year": 2000}],
               "select": {
-                "type": "point",
-                "fields": ["year"]
+                  "type": "point",
+                  "fields": ["year"]
               },
               "bind": {
-                "name": "Year",
-                "input": "range",
-                "min": 2000, "max": 2020, "step": 1
+                  "name": "Year",
+                  "input": "range",
+                  "min": 2000,
+                  "max": 2019,
+                  "step": 1
               }
-            },
-            {
-              "name": "hovered",
-              "select": {
-                "type": "point",
-                "fields": ["Region"],
-                "toggle": false,
-                "on": "mouseover"
-              }
-            },
-            {
-              "name": "clicked",
-              "select": {"type": "point", "fields": ["Region"]}
-            }],
-          "transform": [{"filter": {"param": "year"}}],
-          
-          "mark": {"type": "circle", "size": 125, "opacity": 0.7},
-          
-          "encoding": {"color": {"field": "name", "title": "Continent", "legend":{"titleFont":"Roboto", "titleFontSize":15, "labelFont":"Roboto", "labelFontSize":12}, "scale":{"range":["#FFB000", "#FE6100", "#DC267F", "#785EF0", "#648FFF"]}},
-        "tooltip":[{"field":"year", "title":"Year"},{"field":"name", "title":"Continent"},{"field":"year", "title":"Year"},{"field":"WRI", "title":"WRI"},{"field":"Exposure", "title":"Exposure"}]}
-        },
-        {
-          "transform": [
-            
-            {
-              "filter": {
-                "and": [
-                  {"param": "year"},
-                  {"or": [
-                    {"param": "clicked", "empty": false},
-                    {"param": "hovered", "empty": false}
-                  ]}
-                ]
-              }
-            }
-          ],
-          "params": [{
-            "name": "zoom",
-            "select": "interval",
-            "bind": "scales"
-          }],
-          "mark": {
-            "type": "text",
-            "yOffset": -12,
-            "fontSize": 12,
-            "fontWeight": "bold"
           },
-          "encoding": {
-            "text": {"field": "Region"},
-            "color": {"field": "name", "title": "Continent"}
+          {
+            "name": "hovered",
+            "select": {
+              "type": "point",
+              "fields": ["Region"],
+              "toggle": false,
+              "on": "mouseover"
+            }
+          },
+          {
+            "name": "clicked",
+            "select": {"type": "point", "fields": ["Region"]}
           }
-        },
-        {
-          "transform": [
-            {"filter": {"param": "hovered", "empty": false}},
-            {"filter": {"not": {"param": "year"}}}
-          ],
-          "layer": [
-            {
+        
+
+        ],
+          "transform": [{"filter": {"param": "year"}}],
+          "mark": {"type": "circle", "size": 125, "opacity": 0.7},
+          "encoding": {
+              "color": {
+                  "field": "Continent",
+                  "title": "Continent",
+                  "legend": {
+                      "titleFont": "Roboto",
+                      "titleFontSize": 15,
+                      "labelFont": "Roboto",
+                      "labelFontSize": 12
+                  },
+                  "scale": {"scheme": "tableau10"}
+              }}
+            },{
+              "transform": [
+                
+                {
+                  "filter": {
+                    "and": [
+                      {"param": "year"},
+                      {"or": [
+                        {"param": "hovered", "empty": false}
+                      ]}
+                    ]
+                  }
+                }
+              ],
+              "params": [{
+                "name": "zoom",
+                "select": "interval",
+                "bind": "scales"
+              }],
               "mark": {
                 "type": "text",
                 "yOffset": -12,
                 "fontSize": 12,
-                "color": "gray"
+                "fontWeight": "bold"
               },
-              "encoding": {"text": {"field": "year"}}
+              "encoding": {
+                "text": {"field": "Region"},
+                "color": {"field": "Continent", "title": "Continent"}
+              }
             },
-            {"mark": {"type": "circle", "color": "gray"}}
+            {
+              "transform": [
+                {"filter": {"param": "hovered", "empty": false}},
+                {"filter": {"not": {"param": "year"}}}
+              ],
+              "layer": [
+                {
+                  "mark": {
+                    "type": "text",
+                    "yOffset": -12,
+                    "fontSize": 12,
+                    "color": "gray"
+                  },
+                  "encoding": {"text": {"field": "year"}}
+                },
+                {"mark": {"type": "circle", "color": "gray"}}
+              ]
+            }
           ]
         }
-      ]
-    }
-  ]}]}
+      ]}
+             

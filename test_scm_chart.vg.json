@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/merged_dataset.csv"},  
+  "repeat": {
+    "row": ["Access to electricity (% of population)", "Access to clean fuels for cooking", "Renewable energy share in the total final energy consumption (%)", "Electricity from fossil fuels (TWh)", "Value_co2_emissions_kt_by_country"],
+    "column": ["Value_co2_emissions_kt_by_country", "Electricity from fossil fuels (TWh)", "Renewable energy share in the total final energy consumption (%)", "Access to clean fuels for cooking", "Access to electricity (% of population)"]
+  }, 
+  "spec": {
+    "width":150,
+    "height":120,
+    "layer":[{
+      "params": [{
+        "name": "brush",
+        "select": {"type": "interval", "resolve": "global"}
+      },
+      {
+          "name": "year",
+          "select": {"type": "point", "fields": ["Year"]},
+          "bind": "legend"
+        }
+ ],
+  "mark": "point",   
+  "encoding": {
+      "x": {"field": {"repeat": "column"}, "type": "quantitative"},
+      "y": {
+        "field": {"repeat": "row"},
+        "type": "quantitative",
+        "axis": {"minExtent": 30}
+      },
+      "color": {
+        "condition": {
+          "param": "brush",
+          "field": "Year",
+          "type": "nominal",
+          "scale": {
+              "scheme": "darkred"
+              }
+        },
+        "value": "grey"
+      },
+      "opacity": {
+          "condition": {"param": "year", "value": 0.3},
+          "value": 0.005
+    }
+  }},
+  {
+    "mark": {
+      "type": "line",
+      "color": "yellow"
+    },
+    "transform": [
+      {
+        "regression": "Electricity from fossil fuels (TWh)",
+        "on": "Value_co2_emissions_kt_by_country"
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": {"repeat": "column"},
+        "type": "quantitative"
+      },
+      "y": {
+        "field": {"repeat": "row"},
+        "type": "quantitative"
+      }
+    }
+  
+}]
+ 
+}
+}

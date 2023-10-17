@@ -1,27 +1,40 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1400,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_scatter.csv"
   },
+  
+  
   "params": [
     {
       "name": "Year_selection",
       "value": 2019,
       "bind": {
-      "input": "range",
-      "min": 2000,
-      "max": 2019,
-      "step": 1,
-      "name": "Year: "
+        "input": "range",
+        "min": 2000,
+        "max": 2019,
+        "step": 1,
+        "name": "Year: "
+      }
     }
-   }
   ],
-  "layer": [
+  "hconcat": [
     {
+      "width": 500,
+      "height":400,
       "mark": "point",
+      "selection": {
+        "selectedPoint": {
+          "type": "single",
+          "on": "click",
+          "fields": ["Region"],
+          "empty": "none"
+        }
+      },
       "transform": [
-        {"filter" : "datum.year == Year_selection"}
-        
+        {"filter": "datum.year == Year_selection"}
       ],
       "encoding": {
         "x": {
@@ -34,13 +47,33 @@
         },
         "color": {
           "field": "Continent",
-          "type": "quantitative"
+          "type": "nominal"
         },
         "tooltip": [
-          {"field": "Entity", "type": "nominal"},
+          {"field": "Region", "type": "nominal"},
           {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
           {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"}
         ]
+      }
+    },
+    {
+      "width": 500,
+      "height":300,
+      "mark": "line",
+      "transform": [
+        {
+          "filter": {"selection": "selectedPoint"}
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "Value_co2_emissions_kt_by_country",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "year",
+          "type": "nominal"
+        }
       }
     }
   ]
