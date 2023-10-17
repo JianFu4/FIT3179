@@ -4,6 +4,19 @@
     "width": 800,
     "height": 400,
     "projection": {"type":"equalEarth"},
+    "params": [
+      {
+        "name": "Year_selection",
+        "value": 2020,
+        "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Year: "
+      }
+     }
+    ],
     "layer":[
       {
         "data": {
@@ -28,23 +41,10 @@
       },
       {
         "data" : {
-          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv" 
+          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_map.csv" 
         },
-        "selection": {
-          "yearSlider": {
-              "type": "single",
-              "fields": ["Year"],
-              "bind": {
-                  "input": "range",
-                  "min": 2000,
-                  "max": 2020,
-                  "step": 1,
-                  "name": "Year"
-              },
-              "init": {"Year": 2020}
-          }
-      },
-        "transform": [{"filter" : "datum.Year == yearSlider.Year"}],
+  
+        "transform": [{"filter" : "datum.Year == Year_selection"}],
         "mark" : {"type":"circle",
         "opacity": 0.7,
         "color" : "#FFA500",
@@ -55,10 +55,9 @@
         "encoding": {
           "longitude": {"field":"Longitude","type": "quantitative"},
           "latitude": {"field":"Latitude","type": "quantitative"},
-          "size" : {"field":"Primary energy consumption per capita (kWh/person)",
-          "type": "quantitative",
-          "title": "Primary energy consumption per capita (kWh/person)",
-          "scale" : {"domain":[0, 263000]}
+          "size" : {"field":"Category",
+          "type": "nominal",
+          "title": "Primary energy consumption per capita (kWh/person)"
           },
           "tooltip":[
              {
@@ -70,11 +69,6 @@
         "field": "Primary energy consumption per capita (kWh/person)",
         "type": "quantitative",
         "title": "Energy Consumption (kWh/person)"
-      },
-      {
-        "field": "Land Area(Km2)",
-        "type": "quantitative",
-        "title": "Land Area(Km2)"
       }
           ]
         }
