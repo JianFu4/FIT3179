@@ -42,6 +42,7 @@
           }
         },
         {
+          
           "mark": {
             "type": "point",
             "filled" : true
@@ -61,12 +62,12 @@
             "x": {
               "field": "Electricity from fossil fuels (TWh)",
               "type": "quantitative",
-              "axis": {"title": "Electricity from fossil fuels (TWh)", "titleFont":"Roboto", "labelFont":"Roboto"}
+              "axis": {"title": "Electricity from fossil fuels (TWh)"}
             },
             "y": {
               "field": "Value_co2_emissions_kt_by_country",
               "type": "quantitative",
-              "axis": {"title": "CO2 emissions", "titleFont":"Roboto", "labelFont":"Roboto"}
+              "axis": {"title": "CO2 emissions"}
             },
             "color": {
               "field": "Continent",
@@ -97,12 +98,12 @@
             "x": {
               "field": "Electricity from fossil fuels (TWh)",
               "type": "quantitative",
-              "axis": {"title": "Electricity from fossil fuels (TWh)", "titleFont":"Roboto", "labelFont":"Roboto"}
+              "axis": {"title": "Electricity from fossil fuels (TWh)"}
             },
             "y": {
               "field": "Value_co2_emissions_kt_by_country",
               "type": "quantitative",
-              "axis": {"title": "CO2 emissions", "titleFont":"Roboto", "labelFont":"Roboto"}
+              "axis": {"title": "CO2 emissions"}
             }
           }
         }
@@ -121,12 +122,12 @@
         "y": {
           "field": "Value_co2_emissions_kt_by_country",
           "type": "quantitative",
-          "axis": {"title": "CO2 emissions", "titleFont":"Roboto", "labelFont":"Roboto"}
+          "axis": {"title": "CO2 emissions"}
         },
         "x": {
           "field": "year",
           "type": "nominal",
-          "axis": {"title": "Year", "titleFont":"Roboto", "labelFont":"Roboto"}
+          "axis": {"title": "Year"}
         }
       }
     }
