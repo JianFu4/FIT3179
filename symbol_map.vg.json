@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Primary energy consumption per capita(kWh/person) (2000-2020)",
-    "width": 800,
-    "height": 400,
+    "width": 1200,
+    "height": 500,
     "projection": {"type":"equalEarth"},
     "params": [
       {

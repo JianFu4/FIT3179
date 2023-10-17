@@ -1,0 +1,255 @@
+@font-face {
+	font-family: DMSerif;
+	src: url(DMSerifDisplay-Regular.ttf);
+}
+
+@font-face {
+	font-family: Butler;
+	src: url(Butler.ttf);
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url(Roboto-Regular.ttf);
+}
+
+@font-face {
+	font-family: Montserrat_Reg;
+	src: url(Montserrat-Regular.ttf);
+}
+
+@font-face {
+	font-family: Montserrat_Bold;
+	src: url(Montserrat-Bold.ttf);
+}
+
+@font-face {
+	font-family: Roboto_Thin;
+	src: url(Roboto-Thin.ttf);
+}
+
+
+#intro {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+
+#choropleth_map {
+	left: 100px;}
+
+
+#bumpchart 
+{padding-left: 25px;}
+
+
+#scatterplot {
+	padding-left: 50px;
+}
+
+#red {
+	color: #de2d26;
+	font-size: 18px;
+	font-weight: bold;
+	
+}
+
+#low {
+	color: #fcae91;
+	font-size: 18px;
+	font-weight: bold;
+	
+}
+
+#veryhigh {
+	color: #a50f15;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+
+#bold {font-size: 20px;
+	font-weight: bold;
+	}
+
+#bold2 {
+	font-weight: bold;
+	color:#a50f15;
+	}
+
+#bold3 {
+	font-weight: bold;
+	font-size: 18px;
+	}
+
+#desc2 {
+	font-size: 16px;
+    font-family: Roboto;
+	padding-bottom: 0px;
+	padding-left: 50px;
+	margin-top: 10px;
+	color: #3e2850;
+	padding-right: 50px;
+	
+}
+
+#heat_map {
+	padding-left: 50px;
+}
+
+#dot_multi {
+	padding-left: 50px;
+	left: 150px;
+	right: 100px;
+}
+
+#oceania {
+	color: #648fff;
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+#africas {
+	color: #ffb000 ;
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+#europe {
+	color: #785ef0;
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+#overall {
+	width: 1500px; margin: 0 auto; overflow: hidden;
+}
+
+#line{
+	left:20px;
+}
+
+#radar{
+	left: 50px;
+}
+
+#radar_2{
+	left: 0px;
+}
+
+#float_desc{
+	font-size: 16px;
+    font-family: Roboto;
+	left: -200px;
+    text-align: justify;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom:5px;
+	color:#3e2850;
+}
+
+h1 {
+	padding-top: 30px;
+    font-size: 30px;
+    font-family: Montserrat_Bold;
+    text-align: center;
+	line-height: 0px;
+	color:#512f74;}
+
+
+#subheader {
+	line-height: 20px;
+    font-size: 18px;
+    font-family: Montserrat_Reg;
+    text-align: center;
+	padding-bottom:5px;
+	color:#505051;
+}
+
+p{
+    font-size: 17px;
+	font-family: Roboto;
+    text-align: justify;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom:5px;
+	color:#3e2850;
+}
+
+h2{
+	display: inline;
+	font-size: 30px;
+	font-family: Montserrat_Bold;
+	padding-left: 50px;
+	padding-bottom:0px;
+	padding-top:70px;
+	line-height: 5px;
+	margin-bottom: 0px;
+	color:#512f74;
+}
+
+.column {
+    float: left;
+    width: 48%;
+    }
+
+.column3 {
+	float: left;
+		width: 33%;
+		}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+input[type="range"]{
+	font-family: "Roboto";
+}
+
+.vega-bind{
+	margin-top: 30px;
+	font-family:"Roboto";
+}
+
+select[name="reg_select"]{
+	font-family: "Roboto";
+}
+
+select[name="Attribute_selection"]{
+	font-family: "Roboto";
+}
+
+/* Selectors in HTML */
+
+h1 {
+    font-family: 'Fondamento';
+}
+
+p {
+    font-family: 'Roboto';
+}
+
+#idselect {
+    color: green;
+}
+
+.class-select {
+    color: blue;
+}
+
+
+/* Fonts in HTML */
+
+#head1 {
+    font-family: 'Abril Fatface', cursive;
+}
+
+#para1 {
+    font-family: 'Lobster', cursive;
+}
+

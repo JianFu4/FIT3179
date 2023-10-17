@@ -24,36 +24,6 @@
         "encoding": {"text": {"field": "year"}}
       },
       {
-        "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "top",
-        "dx": -50,
-        "dy":-100,
-        "fontSize": 14,
-        "font":"Roboto"
-        },
-        "encoding": {
-        "text": {"value":"Countries from Oceania are more dangerous"},
-        "color": {"value":"black"}
-        }
-    },
-    {
-      "mark": {
-      "type": "text",
-      "align": "left",
-      "baseline": "top",
-      "dx": -150,
-      "dy":150,
-      "fontSize": 14,
-      "font":"Roboto"
-      },
-      "encoding": {
-      "text": {"value":"African countries are more consistent over years"},
-      "color": {"value":"black"}
-      }
-  },
-      {
         "title":{"text":"Exposure Against WRI Trend for Each Continent Across Years", "font":"Roboto"},
         "transform": [
           {

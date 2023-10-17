@@ -1,12 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1400,
-  "height": 500,
+  
   "data": {
     "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_scatter.csv"
   },
-  
-  
   "params": [
     {
       "name": "Year_selection",
@@ -22,43 +19,98 @@
   ],
   "hconcat": [
     {
-      "width": 500,
-      "height":400,
-      "mark": "point",
-      "selection": {
-        "selectedPoint": {
-          "type": "single",
-          "on": "click",
-          "fields": ["Region"],
-          "empty": "none"
+      "width": 400,
+      "height": 400,
+      "layer": [
+        {
+          "mark": "text",
+          "transform": [
+            {"filter": "datum.Region == 'China' || datum.Region == 'United States'"},
+            {"filter": "datum.year == Year_selection"}
+          ],
+          "encoding": {
+            "x": {
+              "field": "Electricity from fossil fuels (TWh)",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "Value_co2_emissions_kt_by_country",
+              "type": "quantitative"
+            },
+            "text": {"field": "Region", "type": "nominal"},
+            "offsetY": {"value": -15} 
+          }
+        },
+        {
+          "mark": {
+            "type": "point",
+            "filled" : true
+          },
+          "selection": {
+            "selectedPoint": {
+              "type": "single",
+              "on": "click",
+              "fields": ["Region"],
+              "empty": "none"
+            }
+          },
+          "transform": [
+            {"filter": "datum.year == Year_selection"}
+          ],
+          "encoding": {
+            "x": {
+              "field": "Electricity from fossil fuels (TWh)",
+              "type": "quantitative",
+              "axis": {"title": "Electricity from fossil fuels (TWh)", "titleFont":"Roboto", "labelFont":"Roboto"}
+            },
+            "y": {
+              "field": "Value_co2_emissions_kt_by_country",
+              "type": "quantitative",
+              "axis": {"title": "CO2 emissions", "titleFont":"Roboto", "labelFont":"Roboto"}
+            },
+            "color": {
+              "field": "Continent",
+              "type": "nominal",
+              "legend": {
+                "orient" : "left",
+                "offset" : 20
+              }
+            },
+            "tooltip": [
+              {"field": "Region", "type": "nominal"},
+              {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
+              {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"}
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "line",
+            "opacity": 0.3
+          },
+          "transform": [
+            {
+              "filter": {"selection": "selectedPoint"}
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Electricity from fossil fuels (TWh)",
+              "type": "quantitative",
+              "axis": {"title": "Electricity from fossil fuels (TWh)", "titleFont":"Roboto", "labelFont":"Roboto"}
+            },
+            "y": {
+              "field": "Value_co2_emissions_kt_by_country",
+              "type": "quantitative",
+              "axis": {"title": "CO2 emissions", "titleFont":"Roboto", "labelFont":"Roboto"}
+            }
+          }
         }
-      },
-      "transform": [
-        {"filter": "datum.year == Year_selection"}
-      ],
-      "encoding": {
-        "x": {
-          "field": "Electricity from fossil fuels (TWh)",
-          "type": "quantitative"
-        },
-        "y": {
-          "field": "Value_co2_emissions_kt_by_country",
-          "type": "quantitative"
-        },
-        "color": {
-          "field": "Continent",
-          "type": "nominal"
-        },
-        "tooltip": [
-          {"field": "Region", "type": "nominal"},
-          {"field": "Electricity from fossil fuels (TWh)", "type": "quantitative"},
-          {"field": "Value_co2_emissions_kt_by_country", "type": "quantitative"}
-        ]
-      }
+      ]
     },
     {
-      "width": 500,
-      "height":300,
+      "width": 400,
+      "height": 400,
       "mark": "line",
       "transform": [
         {
@@ -68,11 +120,13 @@
       "encoding": {
         "y": {
           "field": "Value_co2_emissions_kt_by_country",
-          "type": "quantitative"
+          "type": "quantitative",
+          "axis": {"title": "CO2 emissions", "titleFont":"Roboto", "labelFont":"Roboto"}
         },
         "x": {
           "field": "year",
-          "type": "nominal"
+          "type": "nominal",
+          "axis": {"title": "Year", "titleFont":"Roboto", "labelFont":"Roboto"}
         }
       }
     }
