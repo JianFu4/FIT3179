@@ -42,7 +42,7 @@
       },
       {
         "data" : {
-          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_dataset.csv" 
+          "url": "https://raw.githubusercontent.com/JianFu4/FIT3179/main/data/merged_data_map.csv" 
         },
         
         "transform": [
@@ -63,28 +63,13 @@
           {"filter" : "datum.Year == Year_selection"}
         
         ],
-        "layer": [{
-          "params": [{
-            "name" : "highlight",
-            "select":{
-              "type" : "point",
-              "encoding" : ["shape"],
-              "on" : "mouseover",
-              "clear" : "mouseout"
-            }
-          } 
-
-
-
-          ],
           "mark": {"type": "geoshape"},
           "encoding" : {
             "shape" : { "field" : "geo", "type": "geojson"
           },
           "color" : {
-            "field" : "Primary energy consumption per capita (kWh/person)",
-            "type": "quantitative",
-            "scale": {"domain": [0,263000]}
+            "field" : "Category",
+            "type": "nominal"
           },
           "tooltip" : [
             {
@@ -101,11 +86,15 @@
               "field": "Land Area(Km2)",
               "type": "quantitative",
               "title": "Land Area(Km2)"
+            },
+            {
+              "field": "Category",
+              "type": "nominal",
+              "title": "Category"
+
             }
 
-          ],
-          "stroke": { "condition":{"param": "highlight","empty": false, "value": "white"}},
-          "strokeWidth":{"condition":{"param": "highlight","empty": false,"value" : 1.5},"value":0}
+          ]
         }},
       {
         "mark": {
@@ -122,4 +111,4 @@
         }
       }]
         
-}]}
+}
